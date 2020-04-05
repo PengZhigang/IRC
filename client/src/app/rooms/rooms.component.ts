@@ -56,6 +56,8 @@ export class RoomsComponent implements OnInit {
 
   createRoom(roomname) {
     if (roomname == "") alert("choose a roomname")
+    else if (roomname.length >15) alert("less than 16 caracters pls");
+    
     else {
       var available = true;
       this.rooms.map((n) => { if (roomname == n.name) available = false; });
@@ -64,6 +66,7 @@ export class RoomsComponent implements OnInit {
       } else
         alert("this roomname is already taken")
     }
+    ((<HTMLInputElement>document.getElementById("input")).value) = '';
   }
 
   deleteRoom(roomname) {

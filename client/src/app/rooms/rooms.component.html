@@ -18,7 +18,7 @@
 
     <div class="create">
         <form>
-            <input #name type="text" class="form-control" placeholder="room name" required="required">
+            <input #name id= "input" type="text" class="form-control" placeholder="room name" required="required">
             <button class="createButton btn btn-primary btn-block " (click)="createRoom(name.value)"> Create a new room
             </button>
 
