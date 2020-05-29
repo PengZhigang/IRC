@@ -10,7 +10,7 @@ import {formatDate } from '@angular/common';
 	styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
-	room: string;
+	room: string ='';
 	message: string;
 	messages: Message[] = [];
 	title: string = "chat";
@@ -30,6 +30,8 @@ export class ChatComponent implements OnInit {
 			username: this.chatService.username,
 			room: this.room
 		};
+		if (this.room == '')
+			alert('join a room first');
 		((<HTMLInputElement>document.getElementById("input")).value) = ''
 		// console.log('ici ' + document.getElementById('textArea').innerText)
 		// document.getElementById('textArea').innerText = 'salut';
